@@ -1,0 +1,67 @@
+#topRow {
+    display: flex;
+justify-content: center;
+}
+
+img {
+    height: 350px;
+    width: auto;
+}
+
+#us {
+}
+#alien {
+}
+
+.character {
+    margin: 40px 20px;
+}
+
+#bottomRow {
+    padding: 20px;
+    font: 20px Arial;
+    text-align: center;
+}
+#container {
+    display: flex;
+}
+
+.stats {
+    width: 200px;
+    border-color: black;
+    display: flex;
+    flex-direction: column;
+    visibility: hidden;
+}
+
+.buttonStyle  {
+    background-color: white;
+    border: 5px solid;
+    border-color: black;
+    font: 24px Arial;
+    border-radius: 20px;
+    padding: 10px 25px;
+}
+
+.buttonStyle:hover {
+    background-color: black;
+    color:white ;
+}
+.healthLabel {
+    margin-top: 40px;
+    font: 18px Ariel;
+    font-weight: bold;
+}
+
+.hpBorder {
+    width: 180px;
+    height: 30px;
+    border: 3px solid;
+    border-color: black;
+}
+
+.hpBar {
+    width: 180px;
+    height: 30px;
+    background-color: green;
+}

@@ -3,19 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <title>Space Battle</title>
-    <link rel="stylesheet" src="style.css">
+    <link rel="stylesheet" href="style.css">
     <script defer src="script.js"></script>
 </head>
 <body>
     <div id ="container">
-        <div id="topRow"></div>
-            <div id ="us">
+        <div id="topRow">
+            <div id="usStats" class="stats">
+                <span class ="healthLabel">HEALTH</span><br>
+                <div class="hpBorder">
+                    <div id="usHp" class ="hpBar"></div>
+            </div>
+            <p id = "usMoves">
+            <span class ="healthLabel">MOVES</span><br>
+            <button onclick="blast()" class="buttonStyle">Blast</button>
+        </p>
+            </div>
+        </div>
+            <div id ="us" class="character">
                 <img src="images/space_hero.gif">
             </div>
-            <div id ="alien">
+            <div id ="alien" class="character">
                 <img src="images/enemy.gif">
             </div>
-        <div id="bottomRow"></div>
+       
+     <div id="alienStats" class="stats">
+            <span class ="healthLabel">HEALTH</span><br>
+            <div class="hpBorder">
+                <div id="alienHp" class ="hpBar"></div>
+                </div>
+    </div>
+</div>
+        <div id="bottomRow">
+           <h1> Welcome to the Space Battle </h1>
+           <p> You will be fighitng off the aliens!</p>
+           <button onclick="beginBattle()" class="buttonStyle">Begin Battle</button>
+        </div>
     </div>
 </body>
 </html>
