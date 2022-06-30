@@ -18,6 +18,10 @@ bottomRow.innerHTML = "Click the button to hit the Alien ship"
 
 }
 
+function reloadPage() {
+    window.location.reload()
+}
+
 // //how to pass random values into a class? 
 // class newAlien{
 //     constructor(hull, firepower, accuracy ){
@@ -41,7 +45,7 @@ function alienAttack() {
             bottomRow.innerHTML += "<br> The aliens missed!"
         }
         if (usHealth == 0) {
-            bottomRow.innerHTML += "<br> You've been defeated <br><button onclick='restartGame()' >Play again?</button>"
+            bottomRow.innerHTML += "<br> You've been defeated <br><button onclick='restartGame()' >Play again?</button> <br> <button onclick='reloadPage()'> Retreat? </button>"
             usMoves.style.visibility = "hidden"
 
         }
@@ -63,7 +67,7 @@ function blast() {
             bottomRow.innerHTML = "You missed!"
         }
         if (alienHealth == 0) {
-            bottomRow.innerHTML = "You've won! <br> <button onclick='restartGame()'  >Play again?</button>"
+            bottomRow.innerHTML = "You've won! <br> <button onclick='restartGame()'  >Play again?</button> <br> <button onclick='reloadPage()'>Retreat? </button>"
             usMoves.style.visibility = "hidden"
         } else {
             alienAttack()
@@ -71,12 +75,12 @@ function blast() {
 }
 
 function restartGame() {
-    alienHealth = 20
+    alienHealth = Math.round(Math.random() * (6 - 3 + 1) + 3)
     usHealth = 20
-    let usHpWidth = (usHealth/100)*180
+    let usHpWidth = (usHealth/20)*180
         usHp.style.width = usHpWidth + "px"
 
-    let alienHpWidth = (alienHealth/100)*180
+    let alienHpWidth = (alienHealth/alienHealth)*180
         alienHp.style.width = alienHpWidth + "px"
             
     usMoves.style.visibility = "visible"
