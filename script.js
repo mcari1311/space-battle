@@ -45,7 +45,7 @@ function alienAttack() {
             bottomRow.innerHTML += "<br> The aliens missed!"
         }
         if (usHealth == 0) {
-            bottomRow.innerHTML += "<br> You've been defeated <br><button onclick='restartGame()' >Play again?</button> <br> <button onclick='reloadPage()'> Retreat? </button>"
+            bottomRow.innerHTML += "<br> You've been defeated <br> <button onclick='nextRound()'> Next Round?</button> <br><button onclick='restartGame()' > Restart Game?</button> <br> <button onclick='reloadPage()'> Retreat? </button>"
             usMoves.style.visibility = "hidden"
 
         }
@@ -67,7 +67,7 @@ function blast() {
             bottomRow.innerHTML = "You missed!"
         }
         if (alienHealth == 0) {
-            bottomRow.innerHTML = "You've won! <br> <button onclick='restartGame()'  >Play again?</button> <br> <button onclick='reloadPage()'>Retreat? </button>"
+            bottomRow.innerHTML = "You've won! <br> <button onclick='nextRound()'> Next Round?</button> <br> <button onclick='restartGame()'  > Restart Game?</button> <br> <button onclick='reloadPage()'>Retreat? </button>"
             usMoves.style.visibility = "hidden"
         } else {
             alienAttack()
@@ -86,3 +86,26 @@ function restartGame() {
     usMoves.style.visibility = "visible"
     beginBattle();
 }
+
+function nextRound() {
+    bottomRow.innerHTML = "You won round 1, here is the next round!"
+        
+    setTimeout(newRound, 1000)
+    }
+
+    function newRound() {
+        alienHealth = Math.round(Math.random() * (6 - 3 + 1) + 3)
+        usHealth = 20
+        let usHpWidth = (usHealth/20)*180
+            usHp.style.width = usHpWidth + "px"
+    
+        let alienHpWidth = (alienHealth/alienHealth)*180
+            alienHp.style.width = alienHpWidth + "px"
+            
+        usMoves.style.visibility = "visible"
+
+
+        
+    
+    }
+    
